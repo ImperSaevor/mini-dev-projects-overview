@@ -1,0 +1,152 @@
+<div
+  [ngClass]="{ 'container': true, 'undisplayed': displayNav === false }"
+  class="container"
+>
+  <img
+    class="img-display"
+    src="../assets/button.png"
+    alt="button"
+    (click)="undisplayedNav()"
+  />
+  <div class="beginner-nav">
+    <div class="beginner-title">
+      <p>Beginner Project</p>
+      <div class="line"></div>
+    </div>
+    <ul class="beginner-list">
+      <li>
+        <button
+          routerLinkActive="active"
+          routerLink="tests/beginner/background-changer"
+        >
+          Background Color Changer
+        </button>
+      </li>
+      <li>
+        <button
+          routerLinkActive="active"
+          routerLink="tests/beginner/random-quotes-generator"
+        >
+          Random Quotes Generator
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Counter Project
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Create a modal
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">Calculator</button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          BMI Calculator
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Event Countdown Timer
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="intermediate-nav">
+    <div class="intermediate-title">
+      <p>Intermediate Project</p>
+      <div class="line"></div>
+    </div>
+    <ul class="intermediate-list">
+      <li>
+        <button
+          routerLinkActive="active"
+          routerLink="tests/intermediate/background-changer"
+        >
+          Background Color Changer
+        </button>
+      </li>
+      <li>
+        <button
+          routerLinkActive="active"
+          routerLink="tests/intermediate/random-quotes-generator"
+        >
+          Random Quotes Generator
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Counter Project
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Create a modal
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">Calculator</button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          BMI Calculator
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Event Countdown Timer
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="pro-nav">
+    <div class="pro-title">
+      <p>Pro Project</p>
+      <div class="line"></div>
+    </div>
+    <ul class="pro-list">
+      <li>
+        <button
+          routerLinkActive="active"
+          routerLink="tests/pro/background-changer"
+        >
+          Background Color Changer
+        </button>
+      </li>
+      <li>
+        <button
+          routerLinkActive="active"
+          routerLink="tests/pro/random-quotes-generator"
+        >
+          Random Quotes Generator
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Counter Project
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Create a modal
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">Calculator</button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          BMI Calculator
+        </button>
+      </li>
+      <li>
+        <button routerLinkActive="active" routerLink="home">
+          Event Countdown Timer
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
