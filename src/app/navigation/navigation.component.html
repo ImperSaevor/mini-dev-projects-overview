@@ -1,152 +1,174 @@
 <div
-  [ngClass]="{ 'container': true, 'undisplayed': displayNav === false }"
+  [ngClass]="{ container: true, undisplayed: displayNav === false }"
   class="container"
 >
-  <img
-    class="img-display"
-    src="../assets/button.png"
-    alt="button"
-    (click)="undisplayedNav()"
-  />
-  <div class="beginner-nav">
-    <div class="beginner-title">
-      <p>Beginner Project</p>
-      <div class="line"></div>
+<p id="title">Project by <br>Alexandre Leherpeux Daumas</p>
+<img
+  [ngClass]="{ 'img-display': displayNav === true, 'img-undisplayed': displayNav === false }"
+  src="../assets/button.png"
+  alt="button"
+  (mouseover)="undisplayedNav()"
+/>
+  <div class="nav">
+    <div class="beginner-nav">
+      <div (click)="undisplayedBeginnerList()" class="beginner-title">
+        <p>Beginner Project</p>
+        <div class="line"></div>
+      </div>
+      <ul
+        [ngClass]="{
+          list: true,
+          'list-undisplayed': beginnerListDisplay === false
+        }"
+      >
+        <li>
+          <button
+            routerLinkActive="active"
+            routerLink="tests/beginner/background-changer"
+          >
+            Background Color Changer
+          </button>
+        </li>
+        <li>
+          <button
+            routerLinkActive="active"
+            routerLink="tests/beginner/random-quotes-generator"
+          >
+            Random Quotes Generator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Counter Project
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Create a modal
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Calculator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            BMI Calculator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Event Countdown Timer
+          </button>
+        </li>
+      </ul>
     </div>
-    <ul class="beginner-list">
-      <li>
-        <button
-          routerLinkActive="active"
-          routerLink="tests/beginner/background-changer"
-        >
-          Background Color Changer
-        </button>
-      </li>
-      <li>
-        <button
-          routerLinkActive="active"
-          routerLink="tests/beginner/random-quotes-generator"
-        >
-          Random Quotes Generator
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Counter Project
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Create a modal
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">Calculator</button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          BMI Calculator
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Event Countdown Timer
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="intermediate-nav">
-    <div class="intermediate-title">
-      <p>Intermediate Project</p>
-      <div class="line"></div>
+    <div class="intermediate-nav">
+      <div (click)="undisplayedIntermediate()" class="intermediate-title">
+        <p>Intermediate Project</p>
+        <div class="line"></div>
+      </div>
+      <ul
+        [ngClass]="{
+          list: true,
+          'list-undisplayed': intermediateListDisplay === false
+        }"
+      >
+        <li>
+          <button
+            routerLinkActive="active"
+            routerLink="tests/intermediate/background-changer"
+          >
+            Background Color Changer
+          </button>
+        </li>
+        <li>
+          <button
+            routerLinkActive="active"
+            routerLink="tests/intermediate/random-quotes-generator"
+          >
+            Random Quotes Generator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Counter Project
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Create a modal
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Calculator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            BMI Calculator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Event Countdown Timer
+          </button>
+        </li>
+      </ul>
     </div>
-    <ul class="intermediate-list">
-      <li>
-        <button
-          routerLinkActive="active"
-          routerLink="tests/intermediate/background-changer"
-        >
-          Background Color Changer
-        </button>
-      </li>
-      <li>
-        <button
-          routerLinkActive="active"
-          routerLink="tests/intermediate/random-quotes-generator"
-        >
-          Random Quotes Generator
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Counter Project
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Create a modal
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">Calculator</button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          BMI Calculator
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Event Countdown Timer
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div class="pro-nav">
-    <div class="pro-title">
-      <p>Pro Project</p>
-      <div class="line"></div>
+    <div class="pro-nav">
+      <div (click)="undisplayedPro()" class="pro-title">
+        <p>Pro Project</p>
+        <div class="line"></div>
+      </div>
+      <ul
+        [ngClass]="{ list: true, 'list-undisplayed': proListDisplay === false }"
+      >
+        <li>
+          <button
+            routerLinkActive="active"
+            routerLink="tests/pro/background-changer"
+          >
+            Background Color Changer
+          </button>
+        </li>
+        <li>
+          <button
+            routerLinkActive="active"
+            routerLink="tests/pro/random-quotes-generator"
+          >
+            Random Quotes Generator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Counter Project
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Create a modal
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Calculator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            BMI Calculator
+          </button>
+        </li>
+        <li>
+          <button routerLinkActive="active" routerLink="home">
+            Event Countdown Timer
+          </button>
+        </li>
+      </ul>
     </div>
-    <ul class="pro-list">
-      <li>
-        <button
-          routerLinkActive="active"
-          routerLink="tests/pro/background-changer"
-        >
-          Background Color Changer
-        </button>
-      </li>
-      <li>
-        <button
-          routerLinkActive="active"
-          routerLink="tests/pro/random-quotes-generator"
-        >
-          Random Quotes Generator
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Counter Project
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Create a modal
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">Calculator</button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          BMI Calculator
-        </button>
-      </li>
-      <li>
-        <button routerLinkActive="active" routerLink="home">
-          Event Countdown Timer
-        </button>
-      </li>
-    </ul>
   </div>
 </div>
+

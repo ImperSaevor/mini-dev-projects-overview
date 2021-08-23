@@ -1,15 +1,13 @@
-* {
-  padding: 0px;
+*{
   margin: 0px;
+  padding: 0px;
 }
 
-.container {
-  display: flex;
+.nav{
+  position: fixed;
 }
 
-.body {
-  margin: 10px 10px 0px 10px;
-  width: 100%;
-  height: auto;
-  border: 1px solid rgba($color: #202020, $alpha: 1);
+.body
+{
+  margin-left: 80px;
 }

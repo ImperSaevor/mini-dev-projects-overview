@@ -1,3 +1,10 @@
-<div [ngStyle]="{'background-color': color}">
-  <button (click)="changeColorBackground()">Change Background !</button>
+<div class="container" [ngStyle]="{ 'background-color': color }">
+  <div class="button-container">
+    <p class="text" [ngStyle]="{ color: color[randomNumber - 1] }">
+      This background color is <span>{{ color[randomNumber] }}</span> and color text is <span>{{ color[securityNumber - 1] }}</span>
+    </p>
+    <button class="button" (click)="changeColorBackground()">
+      Change Background Color !
+    </button>
+  </div>
 </div>
