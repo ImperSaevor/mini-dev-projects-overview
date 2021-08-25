@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { BackgroundService } from 'src/app/services/background.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { BackgroundService } from 'src/app/services/background.service';
   styleUrls: ['./background-changer.component.scss'],
 })
 export class BackgroundChangerComponent implements OnInit {
-  
+
   @Input() color!: string[];
   randomNumber!: number;
   securityNumber!: number;
@@ -27,6 +27,10 @@ export class BackgroundChangerComponent implements OnInit {
     ];
     this.randomNumber = 4;
     this.securityNumber = 4;
+  }
+
+  ngOnDestroy(): void{
+    this.backgroundService.getColor('white');
   }
 
   changeColorBackground() {

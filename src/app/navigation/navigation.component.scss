@@ -13,7 +13,6 @@ $textFont: Roboto, Times, "Times New Roman", serif;
   border-bottom-right-radius: 50px;
   box-shadow: 7px 7px 20px rgba($color: #6d6d6d, $alpha: 1);
   max-height: 700px;
-  overflow-y: auto;
 }
 
 #title {
@@ -27,6 +26,8 @@ $textFont: Roboto, Times, "Times New Roman", serif;
   display: flex;
   flex-direction: column;
   top: -50px;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .line {
