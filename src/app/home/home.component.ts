@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BackgroundService } from '../services/background.service';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  message:any;
+  message!: string[];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private backgroundService: BackgroundService) {}
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:5000/api').subscribe(data => this.message = data[1].colorName);
+    this.getColor();
   }
 
-  getWord(): void {
-    this.http.get<any>('http://localhost:5000/api').subscribe(data => this.message = data);
+  getColor(){
+    this.backgroundService.getColor();
+    this.message = this.backgroundService.colorTab;
     console.log(this.message);
   }
 }

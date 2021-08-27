@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { of } from 'rxjs';
 import { BackgroundService } from 'src/app/services/background.service';
 
 @Component({
@@ -7,46 +8,49 @@ import { BackgroundService } from 'src/app/services/background.service';
   styleUrls: ['./background-changer.component.scss'],
 })
 export class BackgroundChangerComponent implements OnInit {
-
-  @Input() color!: string[];
-  randomNumber!: number;
-  securityNumber!: number;
+  @Input() colorText: string = 'black';
+  colorBackground: string = 'white';
+  color!: string[];
 
   constructor(private backgroundService: BackgroundService) {}
 
-  ngOnInit(): void {
-    this.color = [
-      'green',
-      'blue',
-      'red',
-      'black',
-      'white',
-      'yellow',
-      'pink',
-      'purple',
-    ];
-    this.randomNumber = 4;
-    this.securityNumber = 4;
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.colorBackground = 'white';
+    this.colorText = 'black';
+    this.backgroundService.color = this.colorBackground;
   }
 
-  ngOnDestroy(): void{
-    this.backgroundService.getColor('white');
+  getColor() {
+    this.backgroundService.getColor();
+    this.color = this.backgroundService.colorTab;
+    if(this.backgroundService.color != undefined){
+      this.colorText = this.backgroundService.color;
+    }else{
+      this.colorText = 'blue';
+    }
   }
 
-  changeColorBackground() {
-    this.randomNumber = Math.random() * this.color.length - 1;
-    this.randomNumber = Math.round(this.randomNumber);
-
-    if (this.randomNumber < 0 || this.randomNumber > this.color.length) {
-      this.randomNumber = 2;
-    } else {
-      this.backgroundService.getColor(this.color[this.randomNumber]);
-      this.securityNumber = this.randomNumber;
-      console.log(this.randomNumber, this.color[this.randomNumber], this.color[this.randomNumber - 1]);
+  changeColor() {
+    this.getColor();
+    if (this.color != null) {
+      let index = Math.round(Math.random() * (this.color.length - 1));
+      this.colorBackground = this.color[index];
+      this.backgroundService.color = this.colorBackground;
+      if (this.colorBackground === 'black') {
+        this.colorText = 'white';
+      } else if (this.colorText === this.colorBackground) {
+        this.changeColor();
+      } else if (
+        this.colorBackground === undefined ||
+        this.colorText === undefined
+      ) {
+        this.colorBackground = 'black';
+        this.backgroundService.color = this.colorBackground;
+        this.colorText = 'white';
+      }
     }
-
-    if(this.color[this.randomNumber] == "green"){
-      this.securityNumber = 4;
-    }
+    console.log(this.colorText, this.colorBackground);
   }
 }
